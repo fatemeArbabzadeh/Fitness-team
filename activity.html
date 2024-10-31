@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="cssstyle.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <title>Activity Log| fitness tracker</title>
+  </head>
+  <body>
+    <section class="activity">
+      <aside>
+        <div class="sidebar">
+          <div class="toggle">
+            <div class="logo">
+              <img src="Logo_-_Moda_Fitness-removebg-preview.png" />
+              <img class="sidebar-header" src="Logo - Moda Fitness.png" />
+            </div>
+            <div class="close" id="close-btn">
+              <span class="material-icons-sharp"> close </span>
+            </div>
+          </div>
+          <a href="dashbord!!.html">
+            <span class="material-icons-sharp"> dashboard </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="plan.html">
+            <span class="material-icons-sharp"> schedule </span>
+            <h3>Plans</h3>
+          </a>
+          <a class="active" href="activity.html">
+            <span class="material-icons-sharp"> receipt_long </span>
+
+            <h3>Activity</h3>
+          </a>
+          <a href="challengePage.html">
+            <span class="material-icons-sharp"> fitness_center </span>
+            <h3>Challenges</h3>
+          </a>
+          <a href="progress-tracking.html">
+            <span class="material-icons-sharp"> insights </span>
+            <h3>Progress</h3>
+          </a>
+          <a href="Recommendations.html">
+            <span class="material-icons-sharp"> recommend </span>
+            <h3>Suggestions</h3>
+          </a>
+
+          <a href="index.html">
+            <span class="material-icons-sharp"> home </span>
+            <h3>Home</h3>
+          </a>
+          <a href="user.html">
+            <span class="material-icons-sharp"> account_circle </span>
+            <h3>Profile</h3>
+          </a>
+          <a href="form.html">
+            <span class="material-icons-sharp"> settings </span>
+            <h3>Settings</h3>
+          </a>
+          <a href="Register.html">
+            <span class="material-icons-sharp"> logout </span>
+            <h3>Log out</h3>
+          </a>
+        </div>
+      </aside>
+
+      <div class="header">
+        <div class="menu">
+          <button class="menu-btn">
+            <span class="material-icons-sharp"> menu </span>
+          </button>
+          <h1>Activity</h1>
+        </div>
+        <div class="greeting">
+          <h4>Hey There!</h4>
+          <p id="date">Friday, 29 September</p>
+        </div>
+        <div class="user-info">
+          <div class="email">
+            <h4>Tracy</h4>
+            <p>tracybrayan666@gmail.com</p>
+          </div>
+
+          <a href="user.html">
+            <div class="photo">
+              <img
+                src="file.jpg"
+                width="60px"
+                height="60px"
+                style="object-fit: cover"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="log-box">
+          <div class="top">
+            <img src="water.png" width="30px" height="30px" />
+            <h3>Water Intake</h3>
+          </div>
+          <div class="chart-inside">
+            <h2>2/3</h2>
+            <small>Liters</small>
+          </div>
+          <div class="chart" id="waterChart"></div>
+        </div>
+        <div class="log-box">
+          <div class="top">
+            <img src="footstep.png" width="30px" height="30px" />
+            <h3>Steps Taken</h3>
+          </div>
+          <div class="chart-inside">
+            <h2>5689</h2>
+            <small>Steps</small>
+          </div>
+          <div class="chart" id="stepsChart"></div>
+        </div>
+        <div class="log-box">
+          <div class="top">
+            <img src="kcal.png" width="30px" height="30px" />
+            <h3>Calories Burned</h3>
+          </div>
+          <div class="chart-inside">
+            <h2>2500</h2>
+            <small>Calories</small>
+          </div>
+          <div class="chart" id="caloriesChart"></div>
+        </div>
+        <div class="log-box">
+          <div class="top">
+            <img src="sleeping.png" width="30px" height="30px" />
+            <h3>Sleep/ Rest</h3>
+          </div>
+          <div class="chart-inside">
+            <h2>6/8</h2>
+            <small>Hours</small>
+          </div>
+          <div class="chart" id="sleepChart"></div>
+        </div>
+        <div class="log-box activeMinutes">
+          <div class="top">
+            <img src="dumbell-blue.png" width="30px" height="30px" />
+            <h3>Active Minutes</h3>
+          </div>
+          <div class="chart-inside">
+            <h2>25</h2>
+            <small>Minutes</small>
+          </div>
+          <div class="chart" id="activeMinutesChart"></div>
+        </div>
+        <div class="report-box">
+          <div class="report-title">
+            <h3>Weekly Report</h3>
+            <a href="dashbord!!.html">see all</a>
+          </div>
+          <div id="reportchart"></div>
+        </div>
+        <div class="diet-box">
+          <div class="top">
+            <img src="diet.png" width="30px" height="30px" />
+            <h3>Meal Planning Made Easy</h3>
+          </div>
+          <p>
+            Simplify your diet with customized meal plans. Enhance your workouts
+            and results with smart nutrition choices.
+          </p>
+          <a href="Recommendations.html#Recommended"
+            ><button>Start Planning</button></a
+          >
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+    <script>
+      function formatdate() {
+        const daysOfWeek = [
+          "Monday",
+          "Tuesday",
+          "Wednsday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ];
+        const months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const today = new Date();
+        const day = daysOfWeek[today.getDay()];
+        const date = today.getDate();
+        const month = months[today.getMonth()];
+        const year = today.getFullYear();
+
+        document.getElementById(
+          "date"
+        ).textContent = `${day}, ${month} ${date}`;
+      }
+      window.onload = formatdate();
+      const waterIntake = 2;
+      const stepsTaken = 5689;
+      const caloriesBurned = 2000;
+      const sleepHours = 6;
+      const activeMinutes = 20;
+
+      const waterIntakeCompletion = Math.trunc((100 * waterIntake) / 3);
+      const stepsCompletion = Math.trunc((100 * stepsTaken) / 10000);
+      const caloriesCompletion = Math.trunc((100 * caloriesBurned) / 3000);
+      const sleepCompletion = Math.trunc((100 * sleepHours) / 8);
+      const activeMinutesCompletion = Math.trunc((100 * activeMinutes) / 30);
+
+      let waterChart = new ApexCharts(document.getElementById("waterChart"), {
+        chart: {
+          type: "radialBar",
+          height: 240,
+          background: "transparent",
+        },
+        series: [waterIntakeCompletion],
+        fill: {
+          colors: ["lightskyblue"],
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "55%",
+            },
+            track: {
+              background: "rgba(255,255,255,0.1)", // Transparent
+              strokeWidth: "100%",
+            },
+            dataLabels: {
+              name: {
+                show: false,
+              },
+              value: {
+                show: false,
+              },
+              total: {
+                show: false,
+              },
+            },
+          },
+        },
+        stroke: {
+          lineCap: "round",
+        },
+      });
+      waterChart.render();
+
+      let stepsChart = new ApexCharts(document.querySelector("#stepsChart"), {
+        chart: {
+          height: 240,
+          type: "radialBar",
+          background: "transparent",
+        },
+        series: [stepsCompletion],
+        fill: {
+          colors: ["rgb(0,0,139)"],
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "55%",
+            },
+            track: {
+              background: "rgba(255,255,255,0.1)", // Transparent
+              strokeWidth: "100%",
+            },
+            dataLabels: {
+              name: {
+                show: false,
+              },
+              value: {
+                show: false,
+              },
+              total: {
+                show: false,
+              },
+            },
+          },
+        },
+        stroke: {
+          lineCap: "round",
+        },
+      });
+      stepsChart.render();
+
+      let caloriesChart = new ApexCharts(
+        document.querySelector("#caloriesChart"),
+        {
+          chart: {
+            height: 240,
+            type: "radialBar",
+            background: "transparent",
+          },
+          series: [caloriesCompletion],
+          fill: {
+            colors: ["rgb(255,192,203)"],
+          },
+          plotOptions: {
+            radialBar: {
+              hollow: {
+                size: "55%",
+              },
+              track: {
+                background: "rgba(255,255,255,0.1)", // Transparent
+                strokeWidth: "100%",
+              },
+              dataLabels: {
+                name: {
+                  show: false,
+                },
+                value: {
+                  show: false,
+                },
+                total: {
+                  show: false,
+                },
+              },
+            },
+          },
+          stroke: {
+            lineCap: "round",
+          },
+        }
+      );
+      caloriesChart.render();
+
+      let sleepChart = new ApexCharts(document.getElementById("sleepChart"), {
+        chart: {
+          height: 240,
+          type: "radialBar",
+          background: "transparent",
+        },
+        series: [sleepCompletion],
+        fill: {
+          colors: ["rgb(255, 255, 107)"],
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "55%",
+            },
+            track: {
+              background: "rgba(255,255,255,0.1)", // Transparent
+              strokeWidth: "100%",
+            },
+            dataLabels: {
+              name: {
+                show: false,
+              },
+              value: {
+                show: false,
+              },
+              total: {
+                show: false,
+              },
+            },
+          },
+        },
+        stroke: {
+          lineCap: "round",
+        },
+      });
+      sleepChart.render();
+
+      let activeMinutesChart = new ApexCharts(
+        document.querySelector("#activeMinutesChart"),
+        {
+          chart: {
+            height: "90%",
+            type: "radialBar",
+            background: "transparent",
+          },
+          series: [activeMinutesCompletion],
+          fill: {
+            colors: ["rgb(9, 77, 204)"],
+          },
+          plotOptions: {
+            radialBar: {
+              hollow: {
+                size: "55%",
+              },
+              track: {
+                background: "rgba(255,255,255,0.1)", // Transparent
+                strokeWidth: "100%",
+              },
+              dataLabels: {
+                name: {
+                  show: false,
+                },
+                value: {
+                  show: false,
+                },
+                total: {
+                  show: false,
+                },
+              },
+            },
+          },
+          stroke: {
+            lineCap: "round",
+          },
+        }
+      );
+      activeMinutesChart.render();
+
+      const dailyTarget = {
+        waterIntake: 3, //liter
+        stepsTaken: 10000, //steps
+        caloriesBurned: 3000, //calories
+        sleepHours: 8, //hours
+        activeMinutes: 30, //minutes
+      };
+
+      const data = {
+        waterIntake: [2, 2.5, 3, 2.8, 2.6, 2.7, 2.9].map((val) =>
+          Math.trunc((val / dailyTarget.waterIntake) * 100)
+        ),
+        stepsTaken: [5689, 5000, 7000, 8000, 9000, 6500, 8500].map((val) =>
+          Math.trunc((val / dailyTarget.stepsTaken) * 100)
+        ),
+        caloriesBurned: [2000, 2500, 1800, 2200, 2600, 2300, 2400].map((val) =>
+          Math.trunc((val / dailyTarget.caloriesBurned) * 100)
+        ),
+        sleepRest: [7, 6.5, 8, 7.5, 6, 7, 7.2].map((val) =>
+          Math.trunc((val / dailyTarget.sleepHours) * 100)
+        ),
+        activeMinutes: [30, 25, 20, 10, 15, 30, 15].map((val) =>
+          Math.trunc((val / dailyTarget.activeMinutes) * 100)
+        ),
+      };
+
+      let weeklyReportChart = new ApexCharts(
+        document.getElementById("reportchart"),
+        {
+          chart: {
+            type: "bar",
+            height: "90%",
+
+            toolbar: {
+              show: false,
+            },
+            background: "transparent",
+          },
+          plotOptions: {
+            bar: {
+              horizontal: false,
+              borderRadius: 4,
+              columnWidth: "80%",
+              endShaping: "rounded",
+            },
+          },
+          colors: ["#87cefa", "#00008b", "#da70d6", "#ffff6b", "#094dcc"],
+          dataLabels: {
+            enabled: false,
+          },
+          stroke: {
+            show: true,
+            width: 2,
+            colors: ["transparent"],
+          },
+          series: [
+            {
+              name: "Water Intake",
+              data: data.waterIntake,
+            },
+            {
+              name: "Steps Intake",
+              data: data.stepsTaken,
+            },
+            {
+              name: "Calories Burned",
+              data: data.caloriesBurned,
+            },
+            {
+              name: "Sleep/Rest",
+              data: data.sleepRest,
+            },
+            {
+              name: "Active Minutes",
+              data: data.activeMinutes,
+            },
+          ],
+          xaxis: {
+            categories: ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"],
+            labels: {
+              style: {
+                colors: "white",
+                fontFamily: "Poppins",
+                fontSize: "12px",
+              },
+            },
+            axisBorder: {
+              show: false,
+            },
+            axisTicks: {
+              show: false,
+            },
+          },
+          yaxis: {
+            labels: {
+              style: {
+                colors: "white",
+                fontWeight: 500,
+                fontFamily: "poppins",
+              },
+              formatter: function (val) {
+                return val + "%";
+              },
+            },
+            max: 100,
+          },
+          grid: {
+            borderColor: "#303138",
+            strokeDashArray: 0,
+          },
+          tooltip: {
+            theme: "dark",
+            style: {
+              fontSize: "12px",
+              fontFamily: "poppins",
+            },
+            x: {
+              show: false,
+            },
+            y: {
+              formatter: function (val) {
+                return val + "%";
+              },
+            },
+          },
+          fill: {
+            opacity: 1,
+          },
+          legend: {
+            show: false,
+          },
+        }
+      );
+      weeklyReportChart.render();
+    </script>
+  </body>
+</html>

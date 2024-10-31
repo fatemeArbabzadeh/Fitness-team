@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="cssstyle.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <title>ChallengeIntro|Challenges-list| fitness tracker</title>
+  </head>
+  <body>
+    <section class="plank">
+      <aside>
+        <div class="sidebar">
+          <div class="toggle">
+            <div class="logo">
+              <img src="Logo_-_Moda_Fitness-removebg-preview.png" />
+              <img class="sidebar-header" src="Logo - Moda Fitness.png" />
+            </div>
+            <div class="close" id="close-btn">
+              <span class="material-icons-sharp"> close </span>
+            </div>
+          </div>
+          <a href="dashbord!!.html">
+            <span class="material-icons-sharp"> dashboard </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="plan.html">
+            <span class="material-icons-sharp"> schedule </span>
+            <h3>Plans</h3>
+          </a>
+          <a href="activity.html">
+            <span class="material-icons-sharp"> receipt_long </span>
+
+            <h3>Activity</h3>
+          </a>
+          <a class="active" href="challengePage.html">
+            <span class="material-icons-sharp"> fitness_center </span>
+            <h3>Challenges</h3>
+          </a>
+          <a href="progress-tracking.html">
+            <span class="material-icons-sharp"> insights </span>
+            <h3>Progress</h3>
+          </a>
+          <a href="Recommendations.html">
+            <span class="material-icons-sharp"> recommend </span>
+            <h3>Suggestions</h3>
+          </a>
+          <a href="index.html">
+            <span class="material-icons-sharp"> home </span>
+            <h3>Home</h3>
+          </a>
+          <a href="user.html">
+            <span class="material-icons-sharp"> account_circle </span>
+            <h3>Profile</h3>
+          </a>
+          <a href="form.html">
+            <span class="material-icons-sharp"> settings </span>
+            <h3>Settings</h3>
+          </a>
+          <a href="Register.html">
+            <span class="material-icons-sharp"> logout </span>
+            <h3>Log out</h3>
+          </a>
+        </div>
+      </aside>
+
+      <main>
+        <div class="left" id="background">
+          <div class="left-title">
+            <h2>Fitness Tracker</h2>
+            <h1 id="challengeTitle">Plank Challenge</h1>
+            <p id="challengeMoto">30 Days to Strength</p>
+            <button id="Join">Join Now!</button>
+          </div>
+        </div>
+        <div class="right">
+          <h1 id="ChallengeName">30-Days Plank Challenge</h1>
+          <div class="overview">
+            <h3>Overview:</h3>
+            <p id="ChallengeOverview">
+              Strengthen your core and build endurance with our 30-Day Plank
+              Challenge! Start small and gradually increase your plank duration
+              each day. Whether you're a beginner or advanced, this challenge is
+              designed to push you to new limits.
+            </p>
+          </div>
+          <div class="dailyplan">
+            <h3>Daily Plan:</h3>
+            <ul id="planlist">
+              <li>
+                <strong>Week 1: </strong
+                ><span id="week1"
+                  >Start with a 20-second plank and add 5 seconds each
+                  day.</span
+                >
+              </li>
+              <li>
+                <strong>Week 2: </strong
+                ><span id="week2"
+                  >Increase to 40 seconds, adding 10 seconds each day.</span
+                >
+              </li>
+              <li>
+                <strong>Week 3: </strong
+                ><span id="week3"
+                  >Aim for a 1-minute plank, increasing by 15 seconds
+                  daily.</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="tips">
+            <h3>Tips & Form</h3>
+            <ul>
+              <li id="tip1">
+                Keep your body in a straight line from head to heels.
+              </li>
+              <li id="tip2">Engage your core and avoid sagging your hips.</li>
+              <li id="tip3">Modify with knee planks if needed.</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </section>
+    <script>
+      function updateContent(boxNumber) {
+        const challengeTitle = document.getElementById("challengeTitle");
+        const challengeMoto = document.getElementById("challengeMoto");
+        const challengeName = document.getElementById("ChallengeName");
+        const challengeOverview = document.getElementById("ChallengeOverview");
+        const week1 = document.getElementById("week1");
+        const week2 = document.getElementById("week2");
+        const week3 = document.getElementById("week3");
+        const week4 = document.getElementById("week4");
+        const tip1 = document.getElementById("tip1");
+        const tip2 = document.getElementById("tip2");
+        const tip3 = document.getElementById("tip3");
+        const background = document.getElementById("background");
+        const join = document.getElementById("Join");
+        let ul = document.getElementById("planlist");
+
+        switch (boxNumber) {
+          case "1":
+            challengeTitle.textContent = "Plank Challenge";
+            challengeMoto.textContent = "Strengthen Core, Build Endurance";
+            challengeName.textContent = "14 Days of Core Strength";
+            challengeOverview.textContent = `Strengthen your core and build endurance in 14 days! Ideal for all levels, this challenge guides you in gradually increasing plank time while focusing on proper form. Rest days are included to support recovery as you progress toward a stronger core.`;
+            week1.textContent = `Start small and gradually increase your plank duration each day.`;
+            week2.textContent = `Push yourself to hold longer planks, introducing side planks and leg lifts for extra challenge.`;
+            ul.children[2].remove();
+            tip1.textContent = `Keep your body in a straight line from head to heels.`;
+            tip2.textContent = `Engage your core and avoid sagging your hips.`;
+            tip3.textContent = `Modify with knee planks if needed, and remember to breathe deeply throughout.`;
+            join.addEventListener("click", () => {
+              window.location.href = "ChallengeDetails.html";
+            });
+
+            break;
+          case "2":
+            challengeTitle.textContent = "Cardio Blast Challenge";
+            challengeMoto.textContent = "Boost Endurance, Burn Fat";
+            challengeName.textContent = "14 Days of Heart-Pumping Action";
+            challengeOverview.textContent = `Get your heart racing and boost your stamina with our 14-Day Cardio Blast Challenge! Each day features a new cardio-focused routine to increase endurance and burn calories. Ideal for anyone looking to improve their cardiovascular health.
+
+`;
+            week1.textContent = `Start with 10 minutes of moderate cardio, increasing by 5 minutes each day.
+`;
+            week2.textContent = `Push to 20 minutes of high-intensity cardio, adding intervals of sprinting or jumping jacks.`;
+            ul.children[2].remove();
+            tip1.textContent = `Keep your movements controlled and focus on breathing.`;
+            tip2.textContent = `Engage your core to protect your lower back.`;
+            tip3.textContent = `Stay hydrated throughout the challenge.`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("cardioblast.png")';
+            join.style.backgroundColor = "#074a03";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+          case "3":
+            challengeTitle.textContent = "Yoga Challenge";
+            challengeMoto.textContent = "Find Balance, Build Flexibility";
+            challengeName.textContent = "21 Days of Flexibility and Flow";
+            challengeOverview.textContent = `Cultivate balance, strength, and flexibility with this 21-Day Yoga Challenge! Perfect for beginners or seasoned yogis, each day introduces a new sequence designed to stretch, strengthen, and soothe.`;
+            week1.textContent = `Start with 10-minute flow routines, focusing on breathing and posture.`;
+            week2.textContent = `Increase to 15-minute sequences with more challenging poses.`;
+            week3.textContent = `Complete 20-minute sessions, including advanced asanas and deep stretches.`;
+            tip1.textContent = `Focus on your breathing and alignment.`;
+            tip2.textContent = `Use props like blocks or straps if needed.`;
+            tip3.textContent = `Relax into the poses without forcing your body.`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("yogachallenge.png")';
+            join.style.backgroundColor = "#4b5203";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+          case "4":
+            challengeTitle.textContent = "Running Challenge";
+            challengeMoto.textContent = "Run Strong, Go Far";
+            challengeName.textContent = "20 Days to Build Speed and Endurance";
+            challengeOverview.textContent = `Kickstart your running journey with this 20-Day Running Challenge! Gradually increase your distance and speed, whether you're training for your first 5K or simply building stamina.`;
+            week1.textContent = `Start with 10-minute runs at a comfortable pace, increasing by 2 minutes each day.`;
+            week2.textContent = `Push to 20-minute runs, adding 30-second sprint intervals.`;
+            week3.textContent = `Aim for 30 minutes, mixing in hill runs or trail running for variation.`;
+            tip1.textContent = `Focus on your stride and breathing.`;
+            tip2.textContent = `Maintain a steady pace, and don't worry about speed early on.`;
+            tip3.textContent = `Maintain a steady pace, and don't worry about speed early on.`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("runningchallenge.png")';
+            join.style.backgroundColor = "#4E0707";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+          case "5":
+            challengeTitle.textContent = "Meditation Challenge";
+            challengeMoto.textContent = "Calm Mind, Clear Focus";
+            challengeName.textContent = "14 Days of Mindful Calm";
+            challengeOverview.textContent = `Calm your mind and reduce stress with our 14-Day Meditation Challenge. Each session will guide you through mindfulness techniques, helping you feel grounded and more relaxed.`;
+            week1.textContent = `Start with a 20-second plank and add 5 seconds each
+                    day.`;
+            week2.textContent = `Start with 5-minute guided meditations, focusing on breathing.`;
+
+            ul.children[2].remove();
+
+            tip1.textContent = `Find a quiet, comfortable space to meditate.`;
+            tip2.textContent = `Focus on your breath, and don’t worry if your mind wanders.`;
+            tip3.textContent = `Consistency is key. Try to meditate at the same time each day.`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("meditate.png")';
+            join.style.backgroundColor = "#893101";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+          case "6":
+            challengeTitle.textContent = "Hydration Challenge";
+            challengeMoto.textContent = "Fuel Energy, Stay Hydrated";
+            challengeName.textContent = "14 Days to Stay Hydrated";
+            challengeOverview.textContent = `Refresh your body and boost your health by committing to proper hydration with our 14-Day Hydration Challenge! Track your water intake and learn new tips to stay hydrated.`;
+            week1.textContent = `Drink 8 cups of water a day, and add a slice of lemon or cucumber for flavor.
+`;
+            week2.textContent = `Increase to 10 cups, and include hydration-rich foods like watermelon and cucumbers in your meals.`;
+            ul.children[2].remove();
+            tip1.textContent = `Carry a water bottle with you everywhere.`;
+            tip2.textContent = `Set reminders on your phone to drink water throughout the day.`;
+            tip3.textContent = `Listen to your body’s cues and adjust your intake accordingly.`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("hydrate.png")';
+            join.style.backgroundColor = "#a39e05";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+          case "7":
+            challengeTitle.textContent = "Sleep Challenge";
+            challengeMoto.textContent = "Rest Deep, Recharge Fully";
+            challengeName.textContent = "14 Days to Rest and Recharge";
+            challengeOverview.textContent = `Improve your sleep quality and feel more rested with our 14-Day Sleep Challenge. Follow nightly routines that help you fall asleep faster and wake up more refreshed.`;
+            week1.textContent = `Set a consistent bedtime, dim the lights an hour before bed, and avoid screens.`;
+            week2.textContent = `Add calming rituals like reading or meditation before bed, and aim for 7–8 hours of sleep.`;
+            ul.children[2].remove();
+            tip1.textContent = `Create a relaxing bedtime environment—dark, quiet, and cool.`;
+            tip2.textContent = `Avoid caffeine in the evening.`;
+            tip3.textContent = `Stick to the same sleep schedule, even on weekends.`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("sleepchall.png")';
+            join.style.backgroundColor = "#363940";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+          case "8":
+            challengeTitle.textContent = "No-Sugar Challenge";
+            challengeMoto.textContent = "Cut Sugar, Gain Healthh";
+            challengeName.textContent = "14 Days to Cut Sugar Cravings";
+            challengeOverview.textContent = `Detox from sugar and improve your health with this 14-Day No-Sugar Challenge! Learn how to reduce your sugar intake and discover tasty, healthy alternatives.`;
+            week1.textContent = `Start by cutting out sugary snacks and drinks, replacing them with fruits and water.`;
+            week2.textContent = `Eliminate processed foods with hidden sugars, focusing on whole, nutrient-rich meals.`;
+            ul.children[2].remove();
+            tip1.textContent = `Read food labels carefully to spot hidden sugars.`;
+            tip2.textContent = `Drink plenty of water to help reduce cravings.`;
+            tip3.textContent = `Plan your meals and snacks to avoid temptation.`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("nosugar.png")';
+            join.style.backgroundColor = "#400B01";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+          case "9":
+            challengeTitle.textContent = "Gratitude Journal Challenge";
+            challengeMoto.textContent = "Appreciate Life, Cultivate Positivity";
+            challengeName.textContent = "14 Days of Positive Reflections";
+            challengeOverview.textContent = `Boost your mood and mental well-being by practicing gratitude daily with our 14-Day Gratitude Journal Challenge! Take a few moments each day to write down what you’re thankful for.`;
+            week1.textContent = `Write down three things you’re grateful for each morning.`;
+            week2.textContent = `Add a reflection on how those things made your day better.`;
+            ul.children[2].remove();
+            tip1.textContent = `Keep your journal in a place where you’ll see it daily.`;
+            tip2.textContent = `Be specific with your gratitude.`;
+            tip3.textContent = `Focus on the small things as much as the big things.
+`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("gratitude.png")';
+            join.style.backgroundColor = "#4E0707";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+          case "10":
+            challengeTitle.textContent = "Relaxation Challenge";
+            challengeMoto.textContent = "Unwind, Relax, Rejuvenate Daily";
+            challengeName.textContent = "14 Days to Unwind and De-Stress";
+            challengeOverview.textContent = `Decompress and let go of stress with our 14-Day Relaxation Challenge! Learn simple techniques to relax your body and mind, helping you feel more at peace.
+
+`;
+            week1.textContent = `Practice 5 minutes of deep breathing exercises.`;
+            week2.textContent = `Include 10 minutes of light stretching or meditation for deeper relaxation.`;
+            ul.children[2].remove();
+            tip1.textContent = `Find a quiet space to practice relaxation techniques.`;
+            tip2.textContent = `Focus on letting go of tension in each muscle.`;
+            tip3.textContent = `Set a calming atmosphere with soft music or essential oils.`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("relax.png")';
+            join.style.backgroundColor = "#234F1E";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+          case "11":
+            challengeTitle.textContent = "Digital Detox Challenge";
+            challengeMoto.textContent = "Disconnect, Reconnect, Find Peace";
+            challengeName.textContent = "14 Days to Unplug and Reconnect";
+            challengeOverview.textContent = `Take a break from your screens and experience the benefits of being present with our 14-Day Digital Detox Challenge. This challenge encourages mindfulness and better connection with your surroundings.`;
+            week1.textContent = `Limit screen time to 1 hour of non-work use per day.`;
+            week2.textContent = `Replace screen time with activities like reading or spending time outdoors.
+`;
+            ul.children[2].remove();
+            tip1.textContent = `Turn off non-essential notifications.`;
+            tip2.textContent = `Set time limits on social media apps.
+`;
+            tip3.textContent = `Find offline activities to keep you engaged.`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("ddetox.png")';
+            join.style.backgroundColor = "#282536";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+          case "12":
+            challengeTitle.textContent = "Nature Walk Challenge";
+            challengeMoto.textContent = "Explore Nature, Feel Alive";
+            challengeName.textContent = "14 Days of Fresh Air and Exploration";
+            challengeOverview.textContent = `Reconnect with nature and boost your mood with our 14-Day Nature Walk Challenge! Explore your surroundings and enjoy the benefits of fresh air and movement.`;
+            week1.textContent = `Take a 10-minute walk in nature each day, focusing on your surroundings.`;
+            week2.textContent = `Increase your walk to 20 minutes, and try exploring new areas or trails.`;
+            ul.children[2].remove();
+            tip1.textContent = `Wear comfortable shoes and dress for the weather.`;
+            tip2.textContent = `Walk at a pace that allows you to enjoy your surroundings.`;
+            tip3.textContent = `Practice mindfulness by noticing the sights, sounds, and smells around you.`;
+            background.style.backgroundImage =
+              'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("naturewalk.png")';
+            join.style.backgroundColor = "#5e544c";
+            join.addEventListener("click", function showPopup() {
+              alert("This feature is currently not available");
+            });
+
+            break;
+        }
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const boxNumber = urlParams.get("box");
+
+      if (boxNumber) {
+        updateContent(boxNumber);
+      }
+      function showPopup() {
+        alert("This feature is currently not available");
+      }
+    </script>
+  </body>
+</html>

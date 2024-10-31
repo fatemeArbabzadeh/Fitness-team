@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="cssstyle.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>workout2| fitness tracker</title>
+  </head>
+  <body>
+    <section class="exercises">
+      <div class="workout-container">
+        <div class="pose">
+          <img src="gif.gif" class="gif" id="exercise-gif" />
+          <div class="workout-info">
+            <h1 id="day-title">Standard Plank</h1>
+            <h3 id="day-set">Hold for 20 seconds</h3>
+            <p id="exercise-instructions">
+              Start on your elbows and toes, keeping your body in a straight
+              line from head to heels. Engage your core and hold.
+            </p>
+
+            <p id="exercise-benefits">
+              Strengthens the core, shoulders, and back, improving posture and
+              stability.
+            </p>
+            <span id="countdown">01 : 00</span>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="startCountdown">Start</button>
+        <button id="pauseCountdown">Pause</button>
+      </div>
+    </section>
+    <script>
+      // Content for each day
+      const challengeDays = [
+        {
+          day: 1,
+          gif: "plank.gif",
+          Exercise: "Standard Plank",
+          Sets: "Hold for 20 seconds",
+          Time: 20,
+          Instructions:
+            "Start on your elbows and toes, keeping your body in a straight line from head to heels. Engage your core and hold.",
+          Benefits: "Strengthens the core, shoulders, and back.",
+        },
+        {
+          day: 2,
+          gif: "plank.gif",
+          Exercise: "Standard Plank",
+          Sets: "Hold for 25 seconds",
+          Time: 25,
+          Instructions: "Same position as Day 1. Focus on core engagement.",
+          Benefits: "Improves endurance and strengthens the lower back.",
+        },
+        {
+          day: 3,
+          gif: "plank.gif",
+          Exercise: "Standard Plank",
+          Sets: "Hold for 30 seconds",
+          Time: 30,
+          Instructions: "Keep your neck neutral and core tight throughout.",
+          Benefits: "Enhances core strength and balance.",
+        },
+        {
+          day: 4,
+          gif: "plank.gif",
+          Exercise: "Standard Plank",
+          Sets: "Hold for 35 seconds",
+          Time: 35,
+          Instructions: "Add 5 more seconds to increase endurance.",
+          Benefits: "Increases stability and strengthens shoulders.",
+        },
+        {
+          day: 5,
+          gif: "plank.gif",
+          Exercise: "Standard Plank",
+          Sets: "Hold for 40 seconds",
+          Time: 40,
+          Instructions: "Push yourself to hold longer while maintaining form.",
+          Benefits: "Strengthens abs and shoulders.",
+        },
+        {
+          day: 6,
+          gif: "child pose.gif",
+          Exercise: "Child's Pose",
+          Sets: "Hold for 1 minute",
+          Time: 60,
+          Instructions:
+            "Sit back on your heels, stretch your arms forward, and rest your forehead on the mat. Breathe deeply, allowing your body to relax and release tension.",
+          Benefits: "Relaxes lower back, stretches core, and promotes recovery",
+        },
+        {
+          day: 7,
+          gif: "side plank.gif",
+          Exercise: "Side Plank",
+          Sets: "Hold for 30 seconds per side",
+          Time: 30,
+          Instructions:
+            "Lie on your side, stack your feet, and lift your hips, balancing on one arm. Hold.",
+          Benefits: "Strengthens obliques and improves balance.",
+        },
+        {
+          day: 8,
+          gif: "plank leg lift.gif",
+          Exercise: "Standard Plank with Leg Lift",
+          Sets: "Hold for 40 seconds",
+          Time: 40,
+          Instructions:
+            "While holding a plank, lift one leg for 5 seconds, then alternate.",
+          Benefits: "Activates glutes and core.",
+        },
+        {
+          day: 9,
+          gif: "plank.gif",
+          Exercise: "Standard Plank",
+          Sets: "Hold for 50 seconds",
+          Time: 50,
+          Instructions: "Increase duration, focusing on breathing steadily.",
+          Benefits: "Strengthens the full body.",
+        },
+        {
+          day: 10,
+          gif: "shoulder tap.gif",
+          Exercise: "Plank with Shoulder Tap",
+          Sets: "Perform for 40 seconds",
+          Time: 40,
+          Instructions:
+            "In a plank position, tap your right shoulder with your left hand, then alternate.",
+          Benefits: "Enhances core stability and upper body strength.",
+        },
+        {
+          day: 11,
+          gif: "side leg raises.gif",
+          Exercise: "Side Plank with Leg Lift",
+          Sets: "Hold for 30 seconds per side",
+          Time: 30,
+          Instructions:
+            "Perform a side plank and lift your top leg for extra challenge.",
+          Benefits: "Targets obliques, hips, and legs.",
+        },
+        {
+          day: 12,
+          gif: "child pose.gif",
+          Exercise: "Child's Pose",
+          Sets: "Hold for 1 minute",
+          Time: 60,
+          Instructions:
+            "Sit back on your heels, stretch your arms forward, and rest your forehead on the mat. Breathe deeply, allowing your body to relax and release tension.",
+          Benefits:
+            "Relaxes lower back, stretches core, and promotes recovery.",
+        },
+        {
+          day: 13,
+          gif: "plank.gif",
+          Exercise: "Standard Plank",
+          Sets: "Hold for 1 minute",
+          Time: 60,
+          Instructions: "Push to hold for a full minute, keeping form steady.",
+          Benefits: "Builds endurance and strengthens core.",
+        },
+        {
+          day: 14,
+          gif: "plank knee tuck.gif",
+          Exercise: "Plank with Alternating Knee Tucks",
+          Sets: "Perform for 1 minute",
+          Time: 60,
+          Instructions:
+            "In a plank position, tap your right shoulder with your left hand, then alternate.",
+          Benefits: "Engages core and works lower abs.",
+        },
+        {
+          day: 15,
+          gif: "side plank.gif",
+          Exercise: "Side Plank",
+          Sets: "Hold for 45 seconds per side",
+          Time: 45,
+          Instructions: "Complete your challenge with a side plank.",
+          Benefits: "Improves oblique strength and stability.",
+        },
+      ];
+
+      // Get the day parameter from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const day = parseInt(urlParams.get("day"));
+      let countdownInterval;
+      let isPaused = true;
+      // Display the appropriate content based on the day
+      const dayContent = challengeDays.find((d) => d.day === day);
+      if (dayContent) {
+        document.getElementById("day-title").textContent = dayContent.Exercise;
+        document.getElementById("exercise-gif").src = dayContent.gif;
+        document.getElementById("day-set").textContent = dayContent.Sets;
+        document.getElementById("exercise-instructions").textContent =
+          dayContent.Instructions;
+        document.getElementById("exercise-benefits").textContent =
+          dayContent.Benefits;
+        startCountdown(dayContent.Time);
+      }
+
+      let start = document.getElementById("startCountdown");
+      let pause = document.getElementById("pauseCountdown");
+
+      start.addEventListener("click", () => {
+        isPaused = false;
+        startCountdown(dayContent.Time);
+        start.textContent = "Reset";
+      });
+
+      pause.addEventListener("click", () => {
+        if (isPaused) {
+          isPaused = false;
+          pause.textContent = "Pause";
+          startCountdown(
+            parseInt(
+              document.getElementById("countdown").textContent.split(":")[0]
+            ) *
+              60 +
+              parseInt(
+                document.getElementById("countdown").textContent.split(":")[1]
+              )
+          );
+        } else {
+          isPaused = true;
+          pause.textContent = "Resume";
+          clearInterval(countdownInterval);
+        }
+      });
+
+      function startCountdown(countdownTime) {
+        let timeLeft = countdownTime;
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").textContent = formatTime(timeLeft);
+
+        countdownInterval = setInterval(() => {
+          if (!isPaused) {
+            timeLeft--;
+            document.getElementById("countdown").textContent =
+              formatTime(timeLeft);
+            if (timeLeft <= 0) {
+              clearInterval(countdownInterval);
+              completionAlert();
+            }
+          }
+        }, 1000);
+      }
+      function completionAlert() {
+        const retry = confirm(`
+              Well Done!
+              Would you like to do the exercise again?`);
+        if (retry) {
+          startCountdown(dayContent.Time);
+        } else {
+          window.location.href = "ChallengeDetails.html";
+        }
+      }
+      function formatTime(time) {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        return `${minutes.toString().padStart(2, "0")}:${seconds
+          .toString()
+          .padStart(2, "0")}`;
+      }
+    </script>
+  </body>
+</html>
