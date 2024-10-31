@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="cssstyle.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Daily Workout| fitness tracker</title>
+  </head>
+  <body>
+    <div class="hide popup-container" id="startMessage">
+      <div class="popup">
+        <h2 class="popupTitle">Warm up Exercises</h2>
+        <p class="popupText">
+          Prepare your body for action with gentle movements and stretches to
+          improve flexibility and circulation.
+        </p>
+        <div class="pop-up-buttons">
+          <button id="start" class="btn-popup">Start</button>
+          <button id="skipArray" class="btn-popup">Skip</button>
+        </div>
+      </div>
+    </div>
+    <section class="exercises">
+      <div class="workout-container">
+        <div class="pose">
+          <img src="gif.gif" alt="gif" class="gif exerciseGif" />
+          <div class="workout-info">
+            <h1 class="exerciseTitle">Jogging in Place</h1>
+            <h3 class="exerciseDescription">3 sets of 12 reps</h3>
+            <p class="exerciseInstruction">
+              Stand with feet shoulder-width apart, lower into a squat position,
+              then return to standing.
+            </p>
+
+            <p class="exerciseBenefits">
+              Squats target the lower body, including the quadriceps,
+              hamstrings, and glutes, promoting strength, muscle growth, and
+              functional movement.
+            </p>
+            <span class="countdown" id="countdown">00:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="pauseCountdown" class="button">Pause</button>
+        <button id="skipObjectButton" class="button">Skip</button>
+      </div>
+    </section>
+    <div class="hide popup-container" id="endMessage">
+      <div class="popup">
+        <h2>End of Daily Workout Session!</h2>
+        <p>
+          Awesome work! You've pushed through and completed your session. Now,
+          relax, recover, and get ready for the next step in your fitness
+          journey.
+        </p>
+        <button id="greatJobButton" class="btn-popup">Done</button>
+      </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        document.getElementById("startMessage").classList.remove("hide");
+        document.querySelector(".exercises").classList.add("hide");
+        document.getElementById("start").addEventListener("click", () => {
+          document.getElementById("startMessage").classList.add("hide");
+          document.querySelector(".exercises").classList.remove("hide");
+          displayData();
+        });
+        document.getElementById("skipArray").addEventListener("click", () => {
+          document.getElementById("startMessage").classList.add("hide");
+          document.querySelector(".exercises").classList.remove("hide");
+          currentArrayIndex++;
+          currentObjectIndex = 0;
+          if (currentArrayIndex >= arrays.length) {
+            displayCongratulations();
+          } else {
+            displayData();
+          }
+        });
+      };
+      function pop() {
+        document.getElementById("startMessage").classList.remove("hide");
+        document.querySelector(".exercises").classList.add("hide");
+        document.getElementById("start").addEventListener("click", () => {
+          document.getElementById("startMessage").classList.add("hide");
+          document.querySelector(".exercises").classList.remove("hide");
+          displayData();
+        });
+        document.getElementById("skipArray").addEventListener("click", () => {
+          document.getElementById("startMessage").classList.add("hide");
+          document.querySelector(".exercises").classList.remove("hide");
+          currentArrayIndex++;
+          currentObjectIndex = 0;
+          if (currentArrayIndex >= arrays.length) {
+            displayCongratulations();
+          } else {
+            displayData();
+          }
+        });
+      }
+
+      function displayCongratulations() {
+        document.querySelector(".exercises").classList.add("hide");
+        document.getElementById("endMessage").classList.remove("hide");
+
+        document
+          .getElementById("greatJobButton")
+          .addEventListener("click", () => {
+            window.location.href = "great job.html";
+          });
+      }
+      const arrays = [
+        [
+          {
+            Gif: "jogging in place.gif",
+            Title: "Jogging in Place",
+            Description: "1 minute",
+            Instruction: ` Jog on the spot with light steps and consistent pace.`,
+            Benefits: `Jogging in place warms up the entire body, improves circulation, and prepares the muscles and joints for exercise.`,
+            Countdown: 60,
+          },
+          {
+            Gif: "jumping jacks.gif",
+            Title: "Jumping Jacks",
+            Description: "1 minute",
+            Instruction: `Jump with feet wide, bringing arms overhead, then return to start.`,
+            Benefits: `Jumping jacks boost cardiovascular endurance, increase heart rate, and activate the entire body for an effective warm-up.`,
+            Countdown: 60,
+          },
+          {
+            Gif: "high knees.gif",
+            Title: "High Knees",
+            Description: "1 minute",
+            Instruction: `Stand tall, drive knees up toward the chest in a quick, alternating motion.`,
+            Benefits: `High knees engage the core, improve coordination, and build lower body strength while increasing heart rate.
+
+`,
+            Countdown: 60,
+          },
+          {
+            Gif: "arm circles.gif",
+            Title: "Arm Circles",
+            Description: "1 minute",
+            Instruction: `Extend arms to the sides and rotate in small, controlled circles.`,
+            Benefits: `Arm circles activate shoulder and arm muscles, enhancing joint mobility and preparing the upper body for movement.
+
+`,
+            Countdown: 60,
+          },
+          {
+            Gif: "torso twists.gif",
+            Title: "Torso Twists",
+            Description: "1 minute",
+            Instruction: ` Stand with feet shoulder-width apart, lower into a squat position,
+                                then return to standing.`,
+            Benefits: `Torso twists increase spinal flexibility, warm up the core, and improve rotational mobility.`,
+            Countdown: 60,
+          },
+        ],
+        [
+          {
+            Gif: "squats.gif",
+            Title: "Squats",
+            Description: "3 sets of 12 reps",
+            Instruction: `Stand with feet shoulder-width apart, lower into a squat, then return to standing.`,
+            Benefits: `Squats strengthen the lower body, engaging quadriceps, hamstrings, and glutes, promoting muscle growth and stability.`,
+            Countdown: 120,
+          },
+          {
+            Gif: "push up.gif",
+            Title: "Push-ups",
+            Description: "3 sets of 15 reps",
+            Instruction: `Start in a plank, lower the chest toward the floor, then push back up.`,
+            Benefits: `Push-ups target the chest, shoulders, and triceps, building upper body strength and endurance.`,
+            Countdown: 120,
+          },
+          {
+            Gif: "lunges.gif",
+            Title: "Lunges",
+            Description: "3 sets of 12 reps per leg",
+            Instruction: `Step forward, lower the back knee, then push back to standing.`,
+            Benefits: `Lunges engage the quadriceps, glutes, and hamstrings, improving balance and lower body power.`,
+            Countdown: 120,
+          },
+          {
+            Gif: "plank.gif",
+            Title: "Plank",
+            Description: "2 sets of 30-60 seconds",
+            Instruction: `Hold a plank position with elbows under shoulders, keeping body aligned.`,
+            Benefits: `Planks strengthen the core, shoulders, and back, building stability and core endurance.`,
+            Countdown: 120,
+          },
+          {
+            Gif: "deadlifts.gif",
+            Title: "Deadlifts",
+            Description: "3 sets of 10 reps",
+            Instruction: `Stand with feet hip-width apart, hinge at the hips to lower, then return to standing.`,
+            Benefits: `Deadlifts activate the hamstrings, glutes, and lower back, building functional strength.`,
+            Countdown: 120,
+          },
+          {
+            Gif: "shoulder press.gif",
+            Title: "Shoulder Press",
+            Description: "3 sets of 12 reps",
+            Instruction: `Press weights overhead from shoulder height, then lower.`,
+            Benefits: `Shoulder presses strengthen the shoulders and triceps, improving upper body power and endurance`,
+            Countdown: 120,
+          },
+          {
+            Gif: "bent over rows.gif",
+            Title: "Bent-over Rows",
+            Description: "3 sets of 12 reps",
+            Instruction: `Bend forward, hold weights, pull elbows back.`,
+            Benefits: `Bent-over rows target the upper back and biceps, strengthening the back and improving posture.`,
+            Countdown: 120,
+          },
+          {
+            Gif: "russian twist.gif",
+            Title: "Russian Twists",
+            Description: "3 sets of 20 reps",
+            Instruction: `Sit with knees bent, twist from side to side with a weight.`,
+            Benefits: `Russian twists engage the obliques and core, enhancing rotational strength and stability.`,
+            Countdown: 120,
+          },
+          {
+            Gif: "leg raises.gif",
+            Title: "Leg Raises",
+            Description: "3 sets of 15 reps",
+            Instruction: `Lie flat, lift legs up and lower slowly.`,
+            Benefits: `Leg raises target the lower abs, building core strength and stability.`,
+            Countdown: 120,
+          },
+          {
+            Gif: "burpees.gif",
+            Title: "Burpees",
+            Description: "3 sets of 10 reps",
+            Instruction: `Start standing, drop into a plank, do a push-up, then jump back up.`,
+            Benefits: `Burpees provide a full-body workout, building cardiovascular endurance and strength.`,
+            Countdown: 120,
+          },
+        ],
+        [
+          {
+            Gif: "hamstring.gif",
+            Title: "Hamstring Stretch",
+            Description: "1 minute",
+            Instruction: `Sit, reach toward toes, keeping legs extended.`,
+            Benefits: `Hamstring stretches relieve tension in the legs and promote flexibility.`,
+            Countdown: 60,
+          },
+          {
+            Gif: "quad.gif",
+            Title: "Quad Stretch",
+            Description: "1 minute",
+            Instruction: `Stand, bring one heel toward glutes, holding the ankle.`,
+            Benefits: `Quad stretches relax the thigh muscles, reducing post-workout tightness.`,
+            Countdown: 60,
+          },
+          {
+            Gif: "chest stretch.gif",
+            Title: "Chest Stretch",
+            Description: "1 minute",
+            Instruction: `Clasp hands behind and lift arms slightly.`,
+            Benefits: `Chest stretches open the shoulders and chest, aiding in postural alignment.`,
+            Countdown: 60,
+          },
+          {
+            Gif: "child pose.gif",
+            Title: "Child's Pose",
+            Description: "1 minute",
+            Instruction: `Kneel, sit back on heels, and extend arms forward.`,
+            Benefits: `Child's Pose relaxes the back, shoulders, and hips, promoting relaxation.`,
+            Countdown: 60,
+          },
+          {
+            Gif: "torso.gif",
+            Title: "Seated Spinal Twist",
+            Description: "1 minute",
+            Instruction: `Sit on the floor, cross one leg over, and twist toward it.`,
+            Benefits: `Seated spinal twists improve spinal mobility and relieve tension in the back.`,
+            Countdown: 60,
+          },
+        ],
+      ];
+
+      let currentArrayIndex = 0;
+      let currentObjectIndex = 0;
+      let countdownInterval;
+      let isPaused = false;
+
+      function displayData() {
+        const currentArray = arrays[currentArrayIndex];
+        const currentObject = currentArray[currentObjectIndex];
+        document.querySelector(".exerciseTitle").textContent =
+          currentObject.Title;
+        document.querySelector(".exerciseGif").src = currentObject.Gif;
+        document.querySelector(".exerciseDescription").textContent =
+          currentObject.Description;
+        document.querySelector(".exerciseInstruction").textContent =
+          currentObject.Instruction;
+        document.querySelector(".exerciseBenefits").textContent =
+          currentObject.Benefits;
+        startCountdown(currentObject.Countdown);
+      }
+
+      function startCountdown(countdownTime) {
+        let timeLeft = countdownTime;
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").textContent = formatTime(timeLeft);
+
+        countdownInterval = setInterval(() => {
+          if (!isPaused) {
+            timeLeft--;
+            document.getElementById("countdown").textContent =
+              formatTime(timeLeft);
+
+            if (timeLeft <= 0) {
+              clearInterval(countdownInterval);
+              nextObject();
+            }
+          }
+        }, 1000);
+      }
+
+      function formatTime(time) {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        return `${minutes.toString().padStart(2, "0")}:${seconds
+          .toString()
+          .padStart(2, "0")}`;
+      }
+
+      function nextObject() {
+        clearInterval(countdownInterval);
+        isPaused = false;
+        document.getElementById("pauseCountdown").textContent = "Pause";
+
+        currentObjectIndex++;
+        if (currentObjectIndex >= arrays[currentArrayIndex].length) {
+          currentArrayIndex++;
+          currentObjectIndex = 0;
+          if (currentArrayIndex >= arrays.length) {
+            displayCongratulations();
+          } else if (currentArrayIndex === 1 && currentObjectIndex === 0) {
+            document.querySelector(".popupTitle").textContent = "Main Workout";
+            document.querySelector(".popupText").textContent =
+              "Challenge yourself with a series of focused exercises designed to build strength, stamina, and endurance";
+
+            pop();
+          } else if (currentArrayIndex === 2 && currentObjectIndex === 0) {
+            document.querySelector(".popupTitle").textContent =
+              "Cool down Exercises";
+            document.querySelector(".popupText").textContent =
+              "Wrap up your workout with slow, controlled stretches to relax your muscles and aid recovery.";
+
+            pop();
+          }
+        } else {
+          displayData();
+        }
+      }
+
+      document
+        .getElementById("skipObjectButton")
+        .addEventListener("click", () => {
+          nextObject();
+        });
+      document
+        .getElementById("pauseCountdown")
+        .addEventListener("click", () => {
+          if (isPaused) {
+            isPaused = false;
+            document.getElementById("pauseCountdown").textContent = "Pause";
+
+            startCountdown(
+              parseInt(
+                document.getElementById("countdown").textContent.split(":")[0]
+              ) *
+                60 +
+                parseInt(
+                  document.getElementById("countdown").textContent.split(":")[1]
+                )
+            );
+          } else {
+            isPaused = true;
+            document.getElementById("pauseCountdown").textContent = "Resume";
+            clearInterval(countdownInterval);
+          }
+        });
+      displayData();
+    </script>
+  </body>
+</html>
