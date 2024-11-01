@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <!-- <link rel="stylesheet" type="text/css" href="Styles/register.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Protest+Guerrilla&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    }
+
+    body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(bg.png);
+    background-position: center;
+    background-size: cover;
+    font-family: "Poppins", "Protest Guerrilla";
+    }
+    
+
+    .box-1 {
+    width: 35%;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+    height: 50vh;
+    top: 10px;
+    position: relative;
+    }
+
+    
+    .container-b {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+        }
+
+        .top-nav {
+            text-align: center;
+        }
+
+        .brand {
+            text-align: center;
+        }
+        .brand h2{
+            font-family: "Protest Guerrilla";
+            background: linear-gradient(to top, white, purple);
+           -webkit-background-clip: text;
+           background-clip: text ;
+           color: transparent;
+        }
+
+        .logo {
+            width: 280px; 
+            /* height: auto;  */
+        }
+    
+    .box-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blueviolet;
+    padding: 20px;
+    margin-left:360px;
+    background-color:transparent;
+    border: 2px solid #BD08C3 ;
+    border-radius: 5px;
+    margin-top: 40px;
+    width: 30%;
+    position: relative;
+    animation: borderAnimation 3s infinite linear;
+    
+    }
+    @keyframes borderAnimation {
+    0% {
+    border-color: #BD08C3;
+    }
+    50% {
+    border-color: black;
+    }
+    100% {
+    border-color: #BD08C3;
+    }
+    }
+
+    @media screen and (max-width: 768px) {
+        .brand-img img {
+            display: none; 
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .brand-img {
+            height: 150px; 
+        }
+
+    }
+   
+    form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    
+    }
+    .field {
+    margin-bottom: 10px;
+    position: relative;
+    
+    }
+    .field {
+    width: 90%;
+    
+    }
+    input[type="text"],
+    input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    background-color:transparent;
+    border: 1.5px solid #EEEAEA ;
+    border-radius: 10px;
+    }
+    .field {
+    position: relative;
+    }
+    
+   button[type="submit"] {
+    width: 90%;
+    margin: 0 auto 15px;;
+    }
+    .icon {
+    height: 50px;
+    
+    }
+    button[type="submit"] {
+    background: linear-gradient(to bottom, #BD08C3, #5904A2);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    }
+    .toggle-password{
+    position: absolute;
+    right: 4px;
+    top: 35%;
+    transform: translate(-50%);
+    cursor: pointer;
+    color: rgb(181, 173, 173);
+    } 
+    
+    .or-divider
+    {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    
+    }
+    .dash {
+    border-top: 1px solid rgb(181, 173, 173);
+    width: 90px;
+    margin: 0 10px;
+    
+    }
+    .social-icons {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    }
+    .social-icons {
+    display: flex;
+    justify-content: center;
+    }
+    .social-icons i {
+    font-size: 24px;
+    margin: 0 8px;
+    }
+    .create-account{
+    font-size:7px ;
+    color: rgb(181, 173, 173);
+    }
+
+    @media screen and (max-width: 1200px) {
+  body {
+    /* background-image: url(bg\ -\ Copy.png); */
+    background-position: center;
+    background-size: cover;
+   
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box-1,
+  .box-2 {
+    width: 90%;
+  }
+
+  .box-2 {
+    margin-top: 10  px;
+    margin-left: 0;
+  }
+
+ button[type="submit"] {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+    .container-b {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-1,
+    .box-2 {
+        width: 90%;
+    }
+
+    .box-2 {
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .box-1 {
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+        body {
+        background-image: url(bg\ -\ Copy.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: repeat-y;
+        }
+     }
+    </style>
+</head>
+
+<body>
+    <section class="login">
+        <div class="container-b">
+            <div class="box-1">
+                <nav class="top-nav">
+                    <div class="container-b">
+                        <div class="brand">
+                            <img src="Logo - Moda Fitness.png" alt="Logo" class="logo">
+                            <h2>Sign Up or Create An Account</h2>
+                        </div>
+                       
+                    </div>
+                </nav>
+            </div>
+
+            <div class="container-b box-2">
+                <form>
+                    <h2 style="font-family: Protest Guerrilla;">Create Your Account</h2><br>
+                    <div class="field">
+                        <input type="text" id="fullname" required="required" placeholder="FullName">
+                    </div>
+                    <div class="field">
+                        <input type="text" id="username" required="required" placeholder="UserName">
+                    </div>
+                    <div class="field">
+                        <input type="text" required="required" placeholder="Email">
+                    </div>
+                    <div class="field">
+                        <input type="password" required="required" placeholder="Password">
+                        <i class="toggle-password fas fa-eye" id="togglePassword"></i>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox" id="remembeMe">
+                        <label for="remembeMe" id="rememberLabel">Remember me</label>
+                    </div>
+                    <button type="submit" value="Register">Register</button>
+                    <div class="or-divider">
+                        <span class="dash"></span>
+                        or
+                        <span class="dash"></span>
+                    </div>
+                    <div>
+                        <p>Sign In with</p>
+                    </div>
+                    <div class="social-icons">
+                        <i class="fab fa-github" onclick="loginWithGitHub()"></i>
+                        <i class="fab fa-google" onclick="loginWithGoogle()"></i>
+                        <i class="fab fa-facebook" onclick="loginWithFacebook()"></i>
+                    </div><br>
+                    <div class="create-account">
+                        <p style="font-size: 8px;">By creating an account you agree to our <span style="color: rgb(91, 91, 241);">terms of service</span>  and <span style="color: rgb(91, 91, 241);">privacy policy</span> </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section><br>
+
+    <script>
+    
+        const passwordField = document.querySelector('input[type="password"]');
+        const togglePassword = document.getElementById('togglePassword'); 
+    
+        togglePassword.addEventListener('click', function() {
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        const rememberMeCheckbox = document.getElementById('rememberMe');
+        const rememberLabel = document.getElementById('rememberLabel');
+        
+        const rememberMeValue = localStorage.getItem('rememberMe');
+
+        if (rememberMeValue === 'true') {
+            rememberMeCheckbox.checked = true;
+        }
+
+        rememberMeCheckbox.addEventListener('change', function() {
+            if (rememberMeCheckbox.checked) {
+                localStorage.setItem('rememberMe', 'true');
+            } else {
+                localStorage.removeItem('rememberMe');
+            }
+        });
+
+        function loginWithGitHub() {
+            window.location.href = 'https://github.com/login/oauth/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=user';
+        }
+    
+        function loginWithGoogle() {
+            window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=token&scope=openid%20email%20profile';
+        }
+    
+        function loginWithFacebook() {
+            window.location.href = 'https://www.facebook.com/v12.0/dialog/oauth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=email';
+        }
+    </script>
+</body>
+</html>

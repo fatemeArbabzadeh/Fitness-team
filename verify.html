@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>verify page</title>
+    <!-- <link rel="stylesheet" href="verify.css"> -->
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Protest+Guerrilla&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+  
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(bg.png);
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    font-family: "Poppins";
+}
+
+@media screen and (max-width: 1200px) {
+        body {
+        background-image: url(bg\ -\ Copy.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: repeat-y;
+        }
+     }
+h1{
+    font-family: "Protest Guerrilla", system-ui;
+  }
+.box-1 {
+    margin-inline: 10%;
+    margin-top: 5%;
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.small-box {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    color: white;
+    border: 2px solid #BD08C3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33vw;
+    height: 80vh;
+    padding-bottom: 10px;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 6px;
+    position: relative;
+    animation: borderAnimation 3s infinite linear;
+}
+
+/* @keyframes borderAnimation {
+    10% {
+        border-color: #BD08C3;
+    }
+    50% {
+        border-color: black;
+    }
+    80% {
+        border-color: #BD08C3;
+    }
+} */
+@keyframes borderAnimation {
+    0% {
+        border-color: #BD08C3;
+    }
+    50% {
+        border-color: black;
+    }
+    100% {
+        border-color: #BD08C3;
+    }
+}
+
+.h1, label {
+    padding-bottom: 90px;
+}
+label{
+  font-size: small;
+}
+
+.field {
+    display: flex;
+    direction: column;
+    margin-bottom: 70px;
+    padding-bottom: 30px;
+}
+
+.field input {
+    margin: 10px;
+    padding: 10px;
+    width: 43px;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid #A807BD;
+    border-radius: 5px;
+}
+
+button[type="button"]{
+    width: 90%; /* Updated width to 90% */
+    background: linear-gradient(to bottom, #BD08C3, #5904A2);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+a{
+    display: block; 
+    text-align: center;
+    width: 90%;
+}
+@media screen and (max-width: 768px){
+    .small-box {
+        width: 95%;
+    }
+    .field-1{
+        width: 90%;
+        margin-left: 35px;
+      }
+     button, #verify-button, button [type="button"] {
+        width: 95%;
+    }
+}
+@media (max-width: 600px) {
+    .small-box {
+        width: 95%;
+    }
+
+    .field input {
+        width: 30px;
+    }
+    @media screen and (max-width: 480px) {
+      .box-1 {
+        width: 95vw;
+        margin-inline: 2.5%;
+      }
+      .small-box {
+        width: 90vw;
+        height: 70%;
+        top: 15%;
+      }
+    }
+}
+    </style>
+</head>
+
+<body>
+    <section class="login">
+        <div class="container">
+            <div class="box-1">
+                <div class="small-box">
+                    <h1>Verify Code</h1><br>
+                    <label for>Please enter the verify code we’ve send to your email</label>
+                    <div class="field">
+                        <input type="text" id="code1" maxlength="1" />
+                        <input type="text" id="code2" maxlength="1" />
+                        <input type="text" id="code3" maxlength="1" />
+                        <input type="text" id="code4" maxlength="1" />
+                        <input type="text" id="code5" maxlength="1" />
+                        <input type="text" id="code6" maxlength="1" />
+                    </div>
+                    <a href="Change Your Password.html"><button type="button" id="verify-button">Change password</button></a>
+                   </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('verify-button').addEventListener('click', function() {
+            var enteredCode = '';
+            enteredCode += document.getElementById('code1').value;
+            enteredCode += document.getElementById('code2').value;
+            enteredCode += document.getElementById('code3').value;
+            enteredCode += document.getElementById('code4').value;
+            enteredCode += document.getElementById('code5').value;
+            enteredCode += document.getElementById('code6').value;
+    
+            var correctCode = '138333';
+    
+            if (enteredCode === correctCode) {
+                alert('Verification code is correct. Redirecting to change password.');
+                // Redirect to Change Your Password.html page
+                window.location.href = 'Change Your Password.html';
+            } else {
+                alert('Verification code is incorrect. Please try again.');
+    
+                // Clear the input fields for the user to try again
+                document.querySelectorAll('.field input').forEach(input => {
+                    input.value = '';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

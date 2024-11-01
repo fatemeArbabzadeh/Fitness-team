@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Recommendations</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Protest+Guerrilla&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    }
+
+        body {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         background-image: url(bg.png);
+         background-position: center;
+         background-size: cover;
+         font-family: "Poppins", "Protest Guerrilla";
+         height: 100vh;
+        
+        }
+
+        @media screen and (max-width: 1200px) {
+        body {
+        background-image: url(bg\ -\ Copy.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: repeat-y;
+  }
+  }
+        h2{
+            font-family: "Protest Guerrilla";
+        }
+
+        .exercise-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            width: 78%;
+            margin-left: 10%;
+            border-radius: 10px;
+            position: relative;
+            animation: borderAnimation 3s infinite linear;
+        }
+
+        .exercise {
+            font-family: "Protest Guerrilla";
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background: linear-gradient(to top, white, purple);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .exercise-info {
+            text-align: center;
+        
+        }
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .start-button {
+            background: linear-gradient(to bottom, #BD08C3, #5904A2);
+            padding: 13px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+            font-style: italic;
+        }
+
+
+   
+        .gif-container {
+            display: none;
+            text-align: center;
+            animation: borderAnimation 3s infinite linear;
+        }
+
+        .gif-container img {
+          width: 100%;
+          max-width: 400px; 
+          height: auto;
+          border-radius: 10px;
+          }
+
+          @keyframes borderAnimation {
+    0% {
+        border-color: #BD08C3;
+    }
+    50% {
+        border-color: black;
+    }
+    100% {
+        border-color: #BD08C3;
+    }
+}
+
+        @media only screen and (max-width: 768px) {
+        .exercise {
+            font-size: 1.5rem; 
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .exercise {
+            font-size: normal;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <h1 class="exercise" id="popular-workouts">Popular Workouts</h1>
+    <div class="exercise-card">
+        <div class="exercise-info">
+            <h2>(High-Intensity Interval Training)</h2><br>
+            <p>A dynamic workout,combines intense bursts of exercise maximize calorie burn and improve cardiovascular fitness.</p><br>
+            <div class="gif-container" data-src="Fitness 14.gif">
+                <img src="Fitness 14.gif" alt="Exercise GIF"></div><br>
+                <div class="button-wrapper"><button class="start-button" onclick="showGif(1, this)" >Start</button></div>
+        </div>
+        </div>
+
+  <div class="exercise-card">
+      <div class="exercise-info">
+        <h2 id="yoga">Yoga</h2><br>
+           <p> Enhances flexibility, strength, and mental well-being through a series of poses and breathing techniques.</p><br>
+          <div class="gif-container" data-src="fitness 8.gif">
+            <img src="fitness 8.gif" alt="Exercise GIF"></div>
+            <div class="button-wrapper" ><button class="start-button" onclick="showGif(2, this)">Start</button></div>
+            </div>
+            </div>
+
+ <div class="exercise-card">
+   <div class="exercise-info">
+       <h2>Strength Training</h2><br>
+       <p>Builds muscle mass, boosts metabolism, and enhances overall strength and endurance.</p><br>
+     <div class="gif-container" data-src="Fitness 17.gif">
+       <img src="Fitness 17.gif" alt="Exercise GIF"></div><br>
+       <div class="button-wrapper" ><button class="start-button" onclick="showGif(3, this)">Start</button></div>
+       </div>
+      </div>
+
+
+    <h1 class="exercise">Exercise Recommendations</h1>
+    <div class="exercise-card">
+        <div class="exercise-info">
+            <h2>Cardiovascular Workouts</h2><br>
+            <p>Running is a great cardiovascular exercise that helps improve endurance and overall fitness.</p><br>
+                <div class="gif-container" data-src="Fitness 13.gif">
+                    <img src="Fitness 13.gif" alt="Exercise GIF"></div><br>
+                    <div class="button-wrapper"><button class="start-button" onclick="showGif(4, this)">Start</button></div>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-info">
+            <h2>Strength and Resistance Training</h2><br>
+            <p>Squats are effective for building lower body strength and muscle.</p><br>
+            <div class="gif-container" data-src="Fitness 15.gif">
+                <img src="Fitness 15.gif" alt="Exercise GIF"></div><br>
+                <div class="button-wrapper"><button class="start-button"  onclick="showGif(5, this)">Start</button></div>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-info">
+            <h2>Flexibility and Mind-Body</h2><br>
+            <p>Yoga Sun Salutation is a sequence that combines movement and breath to improve flexibility and promote relaxation.</p><br>
+            <div class="gif-container" data-src="fitness 6.gif">
+                <img src="fitness 6.gif" alt="Exercise GIF"></div><br>
+                <div class="button-wrapper"><button class="start-button" id="btn-id"  onclick="showGif(6, this)">Start</button></div>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-info">
+            <h2>High-Intensity Workouts</h2><br>
+            <p>Burpees are a full-body exercise that combines strength, cardio, and explosiveness.</p><br>
+            <div class="gif-container" data-src="Fitness 12.gif">
+                <img src="Fitness 12.gif" alt="Exercise GIF"></div><br>
+                <div class="button-wrapper" ><button class="start-button" onclick="showGif(7, this)">Start</button></div>
+        </div>
+    </div><br>
+
+   
+      <h1 class="exercise">Additional Tips</h1>
+        <div class="exercise-card">
+        <div class="exercise-info">
+        <h2> Stay Consistent</h2><br>
+        <p>Consistency is key to seeing results. Aim for regular workouts to achieve your fitness goals.</p><br>
+          <div class="gif-container" data-src="fitness 1.gif">
+           <img src="fitness 1.gif" alt="Exercise GIF"></div><br>
+           <div class="button-wrapper" ><button class="start-button" onclick="showGif(8, this)" >Start</button></div>
+           </div>
+         </div>
+            
+ <div class="exercise-card">
+ <div class="exercise-info">
+     <h2>Listen to Your Body</h2><br>
+     <p>Pay attention to your body's signals and adjust your workout intensity accordingly.</p><br>
+         <div class="gif-container" data-src="fitness 3.gif">
+         <img src="fitness 3.gif" alt="Exercise GIF"></div><br>
+         <div class="button-wrapper"><button class="start-button" onclick="showGif(9, this)">Start</button></div>
+         </div>
+        </div>
+
+ <div class="exercise-card">
+    <div class="exercise-info">
+    <h2>Mix It Up</h2><br>
+     <p>Incorporate a variety of exercises to keep your workouts engaging and prevent plateauing.</p><br>
+      <div class="gif-container" data-src="fitness 5.gif">
+       <img src="fitness 5.gif" alt="Exercise GIF"></div><br>
+       <div class="button-wrapper"><button class="start-button"  onclick="showGif(10, this)">Start</button></div>
+       </div>
+      </div>
+      
+      <script>
+        function showGif(index, button) {
+            var gif = document.querySelectorAll(".gif-container")[index - 1];
+            var buttonElement = button;
+    
+            if (gif.style.display === "none" || gif.style.display === "") {
+                gif.style.display = "block";
+                buttonElement.innerText = "Stop";
+                // Start border animation
+                document.querySelectorAll(".exercise-card")[index - 1].classList.add("animated-border");
+            } else {
+                gif.style.display = "none";
+                buttonElement.innerText = "Start";
+                // Stop border animation
+                document.querySelectorAll(".exercise-card")[index - 1].classList.remove("animated-border");
+            }
+        }
+    </script>
+</body>
+</html>
