@@ -58,7 +58,7 @@ h1{
     justify-content: center;
     align-items: center;
     width: 33vw;
-    height: 80vh;
+    height: 85vh;
     padding-bottom: 10px;
     display: flex;
     margin: 0 auto;
@@ -67,17 +67,6 @@ h1{
     animation: borderAnimation 3s infinite linear;
 }
 
-/* @keyframes borderAnimation {
-    10% {
-        border-color: #BD08C3;
-    }
-    50% {
-        border-color: black;
-    }
-    80% {
-        border-color: #BD08C3;
-    }
-} */
 @keyframes borderAnimation {
     0% {
         border-color: #BD08C3;
@@ -115,9 +104,9 @@ label{
 }
 
 button[type="button"]{
-    width: 90%; /* Updated width to 90% */
+    width: 90%;
     background: linear-gradient(to bottom, #BD08C3, #5904A2);
-    padding: 10px 20px;
+    padding: 15px 20px;
     border: none;
     cursor: pointer;
     border-radius: 8px;
@@ -137,6 +126,8 @@ a{
       }
      button, #verify-button, button [type="button"] {
         width: 95%;
+        
+
     }
 }
 @media (max-width: 600px) {
@@ -154,9 +145,13 @@ a{
       }
       .small-box {
         width: 90vw;
-        height: 70%;
+        height: 85%;
         top: 15%;
       }
+    }
+    .small-box label {
+        width: 95%;
+        text-align: center;
     }
 }
     </style>
